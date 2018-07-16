@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/canvas.css">
+</head>
+
+<body>
+    <canvas id="myCanvas" width="450" height="350" style="border:1px solid #000000;"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d')
+        context.fillStyle = '#C74F78';
+        function dawr(a, b, c, d) {
+            context.fillRect(a, b, c, d)
+        }
+        dawr(150, 50, 100, 100)
+        context.beginPath();
+        context.strokeStyle = "orange";
+        context.moveTo(55, 70);
+        context.lineTo(150, 100);
+        context.stroke();
+
+
+    </script>
+</body>
+
+</html>

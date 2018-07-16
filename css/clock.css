@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box; 
+}
+body{
+    background-color: aquamarine;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+}
+#clock{
+    padding-top: 50vh;
+    font-size: 8rem;
+    margin-top: -8rem;
+}

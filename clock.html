@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/clock.css">
+</head>
+
+<body>
+    <div id="clock">00:00:00</div>
+    <script>
+     
+
+        function colorClock() {
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            h = checkTime(h);
+            m = checkTime(m);
+            s = checkTime(s);
+            var clockFace = h + ':' + m + ':' + s
+            document.getElementById('clock').innerHTML = clockFace
+            setTimeout(function () { colorClock() }, 1000);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }   
+        colorClock()
+
+    </script>
+</body>
+
+</html>
