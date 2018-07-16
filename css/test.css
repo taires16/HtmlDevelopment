@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    ;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.header{
+    
+}
+.menu{
+    display: inline-block;
+    vertical-align: top;
+    height: 62.55px;
+    line-height: 62.55px;
+    float: right;
+    width: 80%;
+    text-align: right;
+}
+.menu a{
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+.header img{
+    width: 5%;
+    height: 16%;
+    margin-left: 100px;
+}
+.tieude img{
+    width: 3%;
+    height: 8%;
+    margin:0 20px;
+}
+.tieude{
+    background: rgb(52, 52, 72);
+    
+}
+span{
+    height: 35.27px;
+    line-height: 35.27px;
+    vertical-align: top;
+}
+.header{
+    margin: 20px;
+}
+.main{
+    color: #333;
+}
+.gach{
+    width: 800px;
+    background: #333333;
+    border: 1px;
+    
+}
+
+

@@ -1,0 +1,46 @@
+body {
+    background-color: #333;
+  }
+.container{
+    background-color: aliceblue;
+    width: 960px;
+    height:  calc(100vh - 40px);
+    margin: 20px auto;
+    position: relative;
+}
+  
+  
+  #box-01 {
+    background-color: hsla(60, 100%, 60%, .85);
+    height: 20%;
+  }
+  
+  #box-02 {
+    background-color: hsla(84, 84%, 56%, .85);
+    height: 65%;
+    width: 75%;
+    float: left;
+  }
+  
+  #box-03 {
+    background-color: hsla(332, 69%, 51%, .85);
+    height: 55%;
+    width: 25%;
+    vertical-align: top;
+    float: left;
+  }
+  
+  #box-04 {
+    background-color: hsla(279, 60%, 44%, .85);
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+  }
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+     

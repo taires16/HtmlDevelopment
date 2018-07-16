@@ -1,0 +1,20 @@
+.card-over{
+    background-color:rgb(240,240,240);
+    text-align: center;
+    padding: 1.2rem;
+}
+nav{
+    margin-bottom: 1.7rem;
+}
+
+#navbarNav{
+    flex: initial;
+}
+
+@media (max-width: 992px){
+
+    #navbarNav{
+        flex-basis: 100%!important;
+        flex-grow: 1!important;
+    }
+}

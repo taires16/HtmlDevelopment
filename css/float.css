@@ -1,0 +1,34 @@
+.packages::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+body {
+    background-color: lightgray;
+  }
+  
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+  }
+  img{
+      float: right;
+      margin: 10px;
+  }
+  .package,
+  package{
+    float: left;
+    width: 29.33%;
+    margin: 1%;
+    padding: 1%;
+    background-color: #eee;
+    text-align: center;
+  }
+  .content {
+    padding: 10px;
+    background-color: #888;
+    clear: both;
+    margin-top: 75px;
+  }
