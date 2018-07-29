@@ -1,26 +1,76 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="css/nut.css">
 </head>
 
 <body>
-    <canvas id="myCanvas" width="450" height="350" style="border:1px solid #000000;"></canvas>
+    <canvas id="mycanvas" width="1500" height="900" style="border: solid 1px"></canvas>
     <script>
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext('2d')
-        context.fillStyle = '#C74F78';
-        function dawr(a, b, c, d) {
-            context.fillRect(a, b, c, d)
+        var element = document.getElementById('mycanvas');
+        var ctx = element.getContext("2d");
+
+        var firstPoint = {
+            x: 100,
+            y: 100
         }
-        dawr(150, 50, 100, 100)
-        context.beginPath();
-        context.strokeStyle = "orange";
-        context.moveTo(55, 70);
-        context.lineTo(150, 100);
-        context.stroke();
+        var distance = 100;
 
 
+        // vẽ 1 vòng tròn
+        // point: điểm cần vẽ
+        function drawCircle(point) {
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        //vẽ 1 hàng các vòng tròn
+        //startPoint: điểm bắt đầu vẽ
+        //numberOfCircle: số lượng vòng tròn cần vẽ
+        function drawLineOfCircle(startPoint, numberOfCircle) {
+            for (var n = 0; n < numberOfCircle; n++) {
+                drawCircle(startPoint);
+                startPoint.x = startPoint.x + distance;
+            }
+        }
+
+
+        // bắt đầu vẽ
+        for (var i = 1; i < 7; i++) {
+
+            if (i == 1) {
+                // nếu là hàng 1: vẽ 1 vòng tròn ở vị trí bắt đầu
+                drawCircle(firstPoint)
+
+            } else if (i == 2) {
+                // nếu là hàng 2: 
+
+                // tính lại điểm bắt đầu
+                var startPoint = {
+                    x: firstPoint.x,
+                    y: firstPoint.y + (distance * (i - 1))
+                }
+
+                // cho vẽ lại 1 hàng vs 2 vòng tròn
+                drawLineOfCircle(startPoint, 2)
+
+            } else {
+                // nếu là hàng 3 trở lên
+
+                // tính lại điểm bắt đầu
+                var startPoint = {
+                    x: firstPoint.x,
+                    y: firstPoint.y + (distance * (i - 1))
+                }
+
+                // cho vẽ lại 1 hàng vs 3 vòng tròn
+                drawLineOfCircle(startPoint, 3)
+            }
+        }
     </script>
 </body>
 
