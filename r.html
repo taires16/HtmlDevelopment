@@ -8,18 +8,30 @@
         var element = document.getElementById('mycanvas');
         var ctx = element.getContext("2d");
         var s = 60;
-        var x=10;
-        var y=10
-        function draw(x,y){
-            for(i=0;i<6;i++){
-                for(n=0;n<6;n++){
-                    ctx.fillRect(x,y,50,50)
-                    y=y+s
-                } 
-                x=x+s
-            }    
+        var x = 10;
+        var y = 10;
+
+        var r = 199;
+        var g = 79;
+        var b = 120;
+
+        function draw(x, y, r, g, b) {
+            // local variable: x, y, r, g, b
+            
+            for (n = 0; n < 6; n++) {
+                ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+                ctx.fillRect(x, y, 50, 50)
+                x = x + s;
+                r = r - 7;
+            }
         }
-        draw(x,y)
+
+        for (z = 0; z < 6; z++) {
+            draw(x, y, r, g, b);
+            y += s;
+            b = b + 15;
+        }
+        console.log(r,g,b)
     </script>
 </body>
 
