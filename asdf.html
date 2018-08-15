@@ -9,61 +9,77 @@
             ['Dimitar', 7]
         ]
 
-        var totalLength = data[1];
-        var totalStep = data[0];
-        var bugs = data.slice(2, data.length);
+        var data2 = [
+            3,
+            5,
+            ['cura', 1],
+            ['Pepi', 1],
+            ['UlTraFlea', 1],
+            ['BOIKO', 1],
+        ]
+
+        var totalLength = data2[1];
+        var totalStep = data2[0];
+        var bugs = data2.slice(2, data2.length);
         var winner = null;
         var maxDistance = totalLength;
-        
-        for(var i = 1; i <= totalStep; i ++ ){
-            if(winner != null) continue;
-            for(n = 0; n < bugs.length; n++){
 
-                checkToAddRoundInfo(bugs[n], i);
-
+        for (var i = 1; i <= totalStep; i++) {
+            if (winner != null) continue;
+            for (n = 0; n < bugs.length; n++) {
+                bugs[n][2] = i;
                 var distance = bugs[n][1] * i;
-                if(distance == totalLength || distance == totalLength -1){
+                if (distance == totalLength || distance == totalLength - 1) {
                     maxDistance = distance
                     winner = bugs[n];
                     break;
-                } else if (distance > totalLength){
+                } else if (distance > totalLength) {
                     break;
                 }
             }
 
         }
 
-        console.log(bugs);
+        if(winner == null){
+            var result = [];
+            bugs.forEach(item => {
+                result.push(item[1]*item[2])
+            })
+           var largest = result[0];
+           var largestIndex = 0;
+           result.forEach((item, i) => {
+               if(item >= result[i]){
+                   largest = item;
+                   largestIndex = i;
+               }
+           })
 
+           winner = bugs[largestIndex];
+        }
+
+        console.log(bugs);
         console.log("##############################################################")
         console.log("##############################################################")
-        for(var z = 0; z < bugs.length; z ++){
+
+        for (var z = 0; z < bugs.length; z++) {
             drawResult(bugs[z]);
         }
+
         console.log("##############################################################")
         console.log("##############################################################")
-        console.log("Winner: ",  winner[0]);
+        console.log("Winner: ", winner[0]);
 
-
-        function drawResult(bug){
+        function drawResult(bug) {
             var dot = '.';
             var resultToSprint = '';
-            for(m = 0; m <= maxDistance; m ++){
+            for (m = 0; m <= maxDistance; m++) {
                 resultToSprint += dot;
                 var distance = bug[1] * bug[2];
-                if(distance == m){
-                    resultToSprint += `${ bug[0] }`;
+                if (distance == m) {
+                    resultToSprint += `${bug[0][0]}`;
                 }
             }
             console.log(resultToSprint);
-        }
-
-        function checkToAddRoundInfo(bug, i){
-            if(!bug[2]){
-                bug.push(i);
-            } else {
-                bug[2] = i;
-            }
         }
 
     </script>
