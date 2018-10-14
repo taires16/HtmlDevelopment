@@ -5,28 +5,12 @@
 <body>
     <canvas id="mycanvas" width="1000" height="900" style="border: solid 1px"></canvas>
     <script>
-        var element = document.getElementById('mycanvas');
-        var ctx = element.getContext("2d");
-
-        // global variable
-        var s = 60;
-        var x = 10;
-        var y = 10;
-
-        function draw() {
-            for (i = 0; i < 6; i++) {
-
-                for (n = 0; n <= i; n++) {
-                    ctx.fillRect(x, y, 50, 50)
-                    y = y + s;
-                }
-
-                y = 10;
-                x += s;
-            }
-
-        }
-        draw();
+       var tong=0
+       var a=[1,2,3]
+       for(i=0;i<a.length;i++){
+           tong+=a[i]
+       }
+       console.log(tong)
     </script>
 </body>
 

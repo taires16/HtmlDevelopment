@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+    <body>
+        <script>
+            var arrayNumber = [4,3,5,6,7]
+            var snt = []
+            var kpsnt=[]
+            
+            arrayNumber.forEach(item => {
+                // Nếu n bé hơn 2 tức là không phải số nguyên tố
+                if (item < 2) {
+                    
+                }
+                else {
+                    // lặp từ 2 tới n-1
+                    for (var i = 2; i < item-1 ; i++) {
+                        if (item % i == 0) {
+            
+                        }
+                        else{
+                            snt.push(item)
+                        }
+                    }
+                }
+            })
+        </script>
+    </body>
+</head>
+
+</html>

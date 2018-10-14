@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Login</title>
+    <style>
+        #login-form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        .margin-bottom-25{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Jquery sample</h1>
+        <h3 class="text-center margin-bottom-25">Member Login</h3>
+        <form id="login-form">
+            <div class="form-group margin-bottom-25">
+                <input type="text" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Username">
+            </div>
+            <div class="form-group margin-bottom-20">
+                <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+            </div>
+            <input type="button" id="submitBtn" class="btn btn-primary margin-bottom-25" value="Login">
+        </form>
+    </div>
+    <hr>
+    <div class="container">
+        <h1>Ajax sample</h1>
+        <input type="button" id="getDataBtn" class="btn btn-primary" value="Get Data">
+        <div id="dataField"></div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $("#submitBtn").click(function (e) {
+
+            //event tra ra boi jquery
+            // console.log(e);
+            //+++++++++++++++++++
+
+
+            var email = $("#emailInput").val();
+            var password = $("#passwordInput").val();
+
+            console.log(email)
+            console.log(password)
+
+            var data = {
+                email : email,
+                password: password
+            }
+
+            console.log(data)
+
+            $.post("https://localhost:44353/api/values/login", data, function(data, status){
+                debugger;
+            })
+            
+        });
+
+
+        $("#getDataBtn").click(function (){
+
+            $.get("https://localhost:44353/api/values" , function(data, status){
+                console.log(data);
+                console.log(status);
+
+                if(status == "success"){
+                    $("#dataField").html(data)
+                }
+            });
+            
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,11 +1,47 @@
 <html>
 
-<head>
-    <link rel="stylesheet" href="css/a.css">
-</head>
-
 <body>
-
+    <script>
+        var a = ["coin 100", "coin 10", "coin 20", "cigars 1", "coin test"]
+        var newArray = []
+        var tong=0
+        var vang
+        var bac
+        var dong
+        a.forEach(function (item) {
+            if (item.includes("coin ")) {
+                var letters = item.substr(5, item.length);
+                var number = parseInt(letters);
+                if (!isNaN(number)) {
+                    newArray.push(number)
+                }
+            }
+        })
+        newArray.forEach(function (element){
+            tong+=element
+        })
+        console.log(tong)
+        if(tong%100==0){
+            vang=tong/100
+            bac=0
+            dong=0
+        }
+        else{
+            vang=Math.floor(tong/100)
+            var soDu=tong%100
+            if(soDu%10==0){
+                bac=soDu/10
+                dong=0
+            }
+            else{
+                bac=Math.floor(soDu/10)
+                dong=soDu%10
+            }
+        }
+        console.log(vang)
+        console.log(bac)
+        console.log(dong)
+    </script>
 </body>
 
 </html>

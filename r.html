@@ -15,23 +15,21 @@
         var g = 79;
         var b = 120;
 
-        function draw(x, y, r, g, b) {
-            // local variable: x, y, r, g, b
-            
-            for (n = 0; n < 6; n++) {
-                ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                ctx.fillRect(x, y, 50, 50)
-                x = x + s;
-                r = r - 7;
+        function draw(n){
+            for(i=0;i<n;i++){
+
+                for(f=0;f<n;f++){
+                    ctx.fillStyle="rgb("+r+","+g+","+b+")"
+                    ctx.fillRect(x,y,50,50);
+                    x=x+s
+                    r=r-7
+                }
+                x=x
+               y=y+s
+               b=120
+               b=b+15
             }
         }
-
-        for (z = 0; z < 6; z++) {
-            draw(x, y, r, g, b);
-            y += s;
-            b = b + 15;
-        }
-        console.log(r,g,b)
     </script>
 </body>
 

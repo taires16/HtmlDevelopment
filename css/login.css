@@ -1,0 +1,15 @@
+h3{
+    margin-top: 50px
+}
+.modal-content{
+    width: 80%
+}
+.modal-footer{
+    padding: 0;
+}
+.btn-light{
+    width: 100%;
+}
+.btn-info{
+    width: 100%;
+}

@@ -1,0 +1,37 @@
+.main-container{
+    width: 1000px;
+}
+.row1{
+    height: 135px;
+    padding: 40px 20px;
+}
+.nav-container {
+    width: 617px;
+    height: 61px;
+}
+.nav-container ul {
+    margin: auto;
+    height: 87%;
+   line-height: 2rem
+
+}
+.lorem {
+    font-family: ﻿Georgia, ﻿Georgia, ﻿Georgia, ﻿MyriadPro-Regular, ﻿AdobeInvisFont;
+    font-size: 22px;
+    color: rgba(51, 51, 51, 255);
+    text-align: center;
+    padding: 0 131px;
+    margin: 40px 0;
+    
+}
+.nav {
+    background: #e2494b;
+    border-radius: 5px;
+}
+
+.row1 {
+    border-bottom: 1px solid #e9ecef
+}
+
+
+

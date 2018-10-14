@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <script>
+        var data = [
+            10,
+            19,
+            ['Angel', 9],
+            ['Boris', 10],
+            ['Georgi', 3],
+            ['Dimitar', 7]
+        ]
+        var quangDuong = data[1]
+        var buocToiDa = data[0]
+        var fleas = data.slice(2)
+        var winer
+        var qdFleas
+        for(i=1;i<=buocToiDa;i++){
+            for(n=0;n<fleas.length;n++){
+                qdFleas=fleas[n][1]*i;
+                if(qdFleas == quangDuong || qdFleas == quangDuong - 1){
+                    winer=fleas[n];
+                    break;
+                }
+                else if(qdFleas > quangDuong){
+                    winer=fleas[n]
+                    break;
+                }
+                else{
+                    
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
