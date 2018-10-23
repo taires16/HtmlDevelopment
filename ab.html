@@ -1,23 +1,15 @@
 <body>
-    <canvas id="mycanvas" width="1300" height="900" style="border: solid 1px"></canvas>
-    <script>
-        var element = document.getElementById('mycanvas');
-        var ctx = element.getContext("2d");
-        var x = 700;
-        var y = 10;
-        var s = 40;
 
-        console.log("ahihi")
-        function draw(n) {
-            for (i = 1; i <= n; i++) {
-                for (z = 1; z <= (i - 1) * 2 + 1; z++) {
-                    ctx.fillRect(x,y,30,30);
-                    x=x+s
+    <script>
+        var state = {
+            history: [
+                {
+                    squares: Array(9).fill(null)
                 }
-                x=700- s * i
-                y = y + s
-            }
-        }
-        draw(4)
+            ],
+            stepNumber: 0,
+            xIsNext: true
+        };
+  
     </script>
 </body>
